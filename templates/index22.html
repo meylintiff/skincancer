@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Skin Cancer Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body{
+      background-image: url('white-plaster-texture.jpg');
+    }
+  </style>
+</head>
+<body>
+
+<div class="container bg-success">
+  <h1 class="jumbotron bg-primary">Skin Cancer Detection with Image Classification</h1>
+  <h3 class="text-center">Classify benign and malignant (melanoma) skin diseases in Python using TensorFlow 2.</h3>
+  <br>
+  <p class="text-center">Kanker kulit adalah pertumbuhan sel kulit yang tidak normal, ini adalah salah satu kanker yang paling umum dan sayangnya, bisa mematikan. Kabar baiknya adalah ketika terdeteksi lebih awal, dokter kulit Anda dapat mengobati dan menghilangkannya sepenuhnya.</p>
+  <br>
+  <p class="text-center">Menggunakan pembelajaran mendalam dan jaringan saraf, kami akan dapat mengklasifikasikan penyakit kulit jinak dan ganas, yang dapat membantu dokter mendiagnosis kanker pada tahap awal. Dalam web ini, kita akan melakukan pengklasifikasi penyakit kulit yang mencoba membedakan antara penyakit kulit jinak (nevus dan seborrheic keratosis) dan ganas (melanoma) hanya dari gambar fotografi menggunakan framework TensorFlow dengan Python.</p>
+  <br>
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Unggah Foto :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+	{% if prediction %}
+  <img src="{{img_path}}" height="400px" width="400px">
+	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
+
+	{% endif %}
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
